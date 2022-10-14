@@ -1,12 +1,18 @@
-import './App.css';
-import Navbar from './components/Navbar';
-import Table from './components/Table';
-
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Table from "./components/Table";
+import Instruments from "./components/Instruments";
+import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
 function App() {
   return (
     <>
       <Navbar />
-      <Table />
+      <Router>
+        <Routes>
+          <Route path="/instruments" element={<Instruments />} />
+          <Route path="/" element={<Table />} />
+        </Routes>
+      </Router>
     </>
   );
 }
