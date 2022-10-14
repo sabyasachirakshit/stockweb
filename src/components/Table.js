@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react'
+import React, { useState, useEffect } from "react";
 import Papa from "papaparse";
 function Table() {
   // State to store parsed data
@@ -37,6 +37,31 @@ function Table() {
     });
   };
 
+  useEffect(() => {
+    document.getElementById("searchBtn").addEventListener("click", (e) => {
+      e.preventDefault();
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    });
+  }, []);
+
   return (
     <div>
       {/* File Uploader */}
@@ -50,7 +75,7 @@ function Table() {
       <br />
       <br />
       {/* Table */}
-      <table>
+      <table id="myTable">
         <thead>
           <tr>
             {tableRows.map((rows, index) => {
@@ -74,4 +99,4 @@ function Table() {
   );
 }
 
-export default Table
+export default Table;

@@ -36,10 +36,11 @@ export default function Navbar() {
               <input
                 className="form-control me-2"
                 type="search"
+                id="myInput"
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button className="btn btn-outline-success" type="submit">
+              <button className="btn btn-outline-success" id="searchBtn" type="submit">
                 Search
               </button>
             </form>
