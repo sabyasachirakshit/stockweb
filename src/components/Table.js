@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import Papa from "papaparse";
 
 function Table() {
@@ -64,13 +63,7 @@ function Table() {
     });
   }, []);
 
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    // 👇️ navigate programmatically
-    navigate("/instruments");
-  };
-
+  var string = "/";
   return (
     <div>
       {/* File Uploader */}
@@ -83,7 +76,7 @@ function Table() {
       />
       <br />
       <br />
-      <button onClick={handleClick}>Navigate to About</button>
+
       {/* Table */}
       <table id="myTable">
         <thead>
@@ -98,15 +91,18 @@ function Table() {
             return (
               <tr key={index}>
                 {value.map((val, i) => {
-                  if(i===0){
+                
+                  if (i === 0) {
+                    string = "/";
+                    string += val;
                     return (
-                      <a href="/instruments">
+                      <a href={string}>
                         <td key={i}>{val}</td>
                       </a>
                     );
                   } else {
                     return <td key={i}>{val}</td>;
-                  }      
+                  }
                 })}
               </tr>
             );
@@ -115,6 +111,7 @@ function Table() {
       </table>
     </div>
   );
+  
 }
 
 export default Table;

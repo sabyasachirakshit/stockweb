@@ -9,7 +9,8 @@ function App() {
       <Navbar />
       <Router>
         <Routes>
-          <Route path="/instruments" element={<Instruments />} />
+          <Route path="/TECHM" element={<Instruments />} />
+          <Route path="/IDBI" element={<Instruments />} />
           <Route path="/" element={<Table />} />
         </Routes>
       </Router>
