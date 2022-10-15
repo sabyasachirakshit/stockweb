@@ -18,7 +18,7 @@ function Table() {
       skipEmptyLines: true,
       complete: function (results) {
         const rowsArray = [];
-        const valuesArray = [];
+        var valuesArray = [];
 
         // Iterating data to get column name and their values
         results.data.map((d) => {
@@ -32,7 +32,7 @@ function Table() {
         // Filtered Column Names
         setTableRows(rowsArray[0]);
 
-        // Filtered Values
+        //Filtered Values
         setValues(valuesArray);
       },
     });
@@ -76,7 +76,6 @@ function Table() {
       />
       <br />
       <br />
-
       {/* Table */}
       <table id="myTable">
         <thead>
@@ -91,7 +90,6 @@ function Table() {
             return (
               <tr key={index}>
                 {value.map((val, i) => {
-                
                   if (i === 0) {
                     string = "/";
                     string += val;
@@ -111,7 +109,6 @@ function Table() {
       </table>
     </div>
   );
-  
 }
 
 export default Table;

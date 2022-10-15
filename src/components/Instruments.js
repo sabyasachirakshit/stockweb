@@ -13,8 +13,46 @@ function Instruments() {
       .then((data) => {
         var o1 = data;
         var o2 = o1.payload;
-        if (symbol === "TECHM") {
-          setUser(o2.TECHM);
+        if (symbol === "TECHM") {         
+            setUser(o2.TECHM);
+        } else if (symbol === "TORNTPOWER") {
+          setUser(o2.TORNTPOWER);
+        } else if (symbol === "IDBI") {
+          setUser(o2.IDBI);
+        } else if (symbol === "GRASIM") {   
+            setUser(o2.GRASIM);         
+        } else if (symbol === "BHARATFIN") {
+          setUser(o2.BHARATFIN);
+        } else if (symbol === "OFSS") {
+          setUser(o2.OFSS);
+        } else if (symbol === "KAJARIACER") {
+          setUser(o2.KAJARIACER);
+        } else if (symbol === "INDIGO") {
+          setUser(o2.INDIGO);
+        } else if (symbol === "ENGINERSIN") {
+          setUser(o2.ENGINERSIN);
+        } else if (symbol === "SBIN") {
+          setUser(o2.SBIN);
+        } else if (symbol === "LALPATHLAB") {
+          setUser(o2.LALPATHLAB);
+        } else if (symbol === "AARTIIND") {
+          setUser(o2.AARTIIND);
+        } else if (symbol === "IPCALAB") {
+          setUser(o2.IPCALAB);
+        } else if (symbol === "INDUSTOWER") {
+          setUser(o2.INDUSTOWER);
+        } else if (symbol === "BIOCON") {
+          setUser(o2.BIOCON);
+        } else if (symbol === "ADANIPOWER") {
+          setUser(o2.ADANIPOWER);
+        } else if (symbol === "CENTURYTEX") {
+          setUser(o2.CENTURYTEX);
+        } else if (symbol === "DIVISLAB") {
+          setUser(o2.DIVISLAB);
+        } else if (symbol === "INFIBEAM") {
+          setUser(o2.INFIBEAM);
+        } else if (symbol === "HAVELLS") {
+          setUser(o2.HAVCELLS);
         }
       });
   };
