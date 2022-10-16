@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Papa from "papaparse";
-
+import "./DesignTable.css";
 function Table() {
   // State to store parsed data
   const [parsedData, setParsedData] = useState([]);
+
 
   //State to store table Column name
   const [tableRows, setTableRows] = useState([]);
@@ -39,7 +40,7 @@ function Table() {
   };
 
   useEffect(() => {
-    document.getElementById("searchBtn").addEventListener("click", (e) => {
+    document.getElementById("myInput").addEventListener("input", (e) => {
       e.preventDefault();
       // Declare variables
       var input, filter, table, tr, td, i, txtValue;
@@ -66,6 +67,12 @@ function Table() {
   var string = "/";
   return (
     <div>
+      <div className="container">
+        Download CSV File:
+        <a href="https://prototype.sbulltech.com/api/v2/instruments">
+          <button>Click here to download CSV file</button>
+        </a>
+      </div>
       {/* File Uploader */}
       <input
         type="file"
@@ -74,6 +81,7 @@ function Table() {
         accept=".csv"
         style={{ display: "block", margin: "10px auto" }}
       />
+
       <br />
       <br />
       {/* Table */}

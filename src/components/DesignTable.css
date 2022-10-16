@@ -1,0 +1,27 @@
+table,
+th,
+td {
+  border: 1px solid;
+  padding: 15px;
+  text-align: revert;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th {
+  height: 70px;
+  background-color: #f87000;
+  color: white;
+}
+
+tr:hover {background-color: rgb(6, 247, 247)}
+
+tr:nth-child(even) {background-color: #f2f2f2b4;}
+
+tr:nth-child(even):hover {background-color:  rgb(6, 247, 247)}
